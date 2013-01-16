@@ -157,6 +157,12 @@
     [self.progressHUD hide:YES];
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self.navigationItem setRightBarButtonItem:self.refreshBarButton animated:YES];
+    [self.progressHUD hide:YES];
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     BOOL shouldLoad = YES;

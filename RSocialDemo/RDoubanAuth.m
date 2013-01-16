@@ -27,7 +27,7 @@ NSTimeInterval const kRDoubanAuthTimeoutOffset = 300; // 5 min
 @property (nonatomic, readonly) BOOL isAccessTokenValid;
 @property (nonatomic, readonly) BOOL isRefreshTokenValid;
 
-@property (nonatomic, assign) BOOL isAuthorizingViaWebView;
+@property (nonatomic, assign) dispatch_semaphore_t isAuthorizingViaWebViewSem;
 
 // Auth flow
 - (void)promptWithWebView;
@@ -81,11 +81,12 @@ NSTimeInterval const kRDoubanAuthTimeoutOffset = 300; // 5 min
                 self.refreshTokenTimeout = nil;
             }
             if (!self.accessToken) {
-                self.isAuthorizingViaWebView = YES;
+                dispatch_semaphore_t isAuthorizingViaWebViewSem = dispatch_semaphore_create(0);
+                self.isAuthorizingViaWebViewSem = isAuthorizingViaWebViewSem;
                 [self promptWithWebView];
-                while (self.isAuthorizingViaWebView) {
-                    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-                }
+                dispatch_semaphore_wait(isAuthorizingViaWebViewSem, DISPATCH_TIME_FOREVER);
+                dispatch_release(isAuthorizingViaWebViewSem);
+                self.isAuthorizingViaWebViewSem = NULL;
                 [self getAccessTokenWithAuthCode];
             }
             if (self.isAccessTokenValid) {
@@ -217,7 +218,9 @@ NSTimeInterval const kRDoubanAuthTimeoutOffset = 300; // 5 min
     };
     NSURL *urlWithData = [NSURL URLWithString:[kRDoubanAuthPromptLink stringByAppendingFormat:@"?%@", [NSString stringWithURLEncodedDictionary:authRequestDictionary]]];
     UINavigationController *navigationController = [RSocialAuthWebViewController navigationControllerWithAuthURL:urlWithData callbackURL:[NSURL URLWithString:self.redirectURI] delegate:self];
-    [topWindow.rootViewController presentViewController:navigationController animated:YES completion:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [topWindow.rootViewController presentViewController:navigationController animated:YES completion:nil];
+    });
 }
 
 - (void)getAccessTokenWithAuthCode
@@ -278,7 +281,7 @@ NSTimeInterval const kRDoubanAuthTimeoutOffset = 300; // 5 min
 
 - (void)authWebViewControllerDidDismiss:(RSocialAuthWebViewController *)viewController
 {
-    self.isAuthorizingViaWebView = NO;
+    dispatch_semaphore_signal(self.isAuthorizingViaWebViewSem);
 }
 
 - (void)authWebViewController:(RSocialAuthWebViewController *)viewController didSuccessWithResponseDictionary:(NSDictionary *)responseDictionary
