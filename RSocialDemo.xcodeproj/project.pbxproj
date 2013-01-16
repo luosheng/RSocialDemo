@@ -19,6 +19,9 @@
 		FAAFB90516A6E6440021AB6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB90416A6E6440021AB6D /* ViewController.m */; };
 		FAAFB90816A6E6440021AB6D /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAFB90616A6E6440021AB6D /* ViewController_iPhone.xib */; };
 		FAAFB90B16A6E6440021AB6D /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAFB90916A6E6440021AB6D /* ViewController_iPad.xib */; };
+		FAAFB91816A6E6E60021AB6D /* NSNumber+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB91516A6E6E60021AB6D /* NSNumber+URLCoding.m */; };
+		FAAFB91916A6E6E60021AB6D /* NSString+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB91716A6E6E60021AB6D /* NSString+URLCoding.m */; };
+		FAAFB91D16A6E6F60021AB6D /* RHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB91C16A6E6F60021AB6D /* RHTTPRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,12 @@
 		FAAFB90416A6E6440021AB6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAAFB90716A6E6440021AB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		FAAFB90A16A6E6440021AB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		FAAFB91416A6E6E60021AB6D /* NSNumber+URLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+URLCoding.h"; sourceTree = "<group>"; };
+		FAAFB91516A6E6E60021AB6D /* NSNumber+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+URLCoding.m"; sourceTree = "<group>"; };
+		FAAFB91616A6E6E60021AB6D /* NSString+URLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCoding.h"; sourceTree = "<group>"; };
+		FAAFB91716A6E6E60021AB6D /* NSString+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCoding.m"; sourceTree = "<group>"; };
+		FAAFB91B16A6E6F60021AB6D /* RHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHTTPRequest.h; sourceTree = "<group>"; };
+		FAAFB91C16A6E6F60021AB6D /* RHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHTTPRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,7 @@
 		FAAFB8EA16A6E6440021AB6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAAFB91216A6E65F0021AB6D /* RFoundation */,
 				FAAFB8EB16A6E6440021AB6D /* UIKit.framework */,
 				FAAFB8ED16A6E6440021AB6D /* Foundation.framework */,
 				FAAFB8EF16A6E6440021AB6D /* CoreGraphics.framework */,
@@ -85,6 +95,7 @@
 		FAAFB8F116A6E6440021AB6D /* RSocialDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FAAFB91116A6E6520021AB6D /* RSocial */,
 				FAAFB8FA16A6E6440021AB6D /* AppDelegate.h */,
 				FAAFB8FB16A6E6440021AB6D /* AppDelegate.m */,
 				FAAFB90316A6E6440021AB6D /* ViewController.h */,
@@ -108,6 +119,42 @@
 				FAAFB90116A6E6440021AB6D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAAFB91116A6E6520021AB6D /* RSocial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RSocial;
+			sourceTree = "<group>";
+		};
+		FAAFB91216A6E65F0021AB6D /* RFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				FAAFB91316A6E6DD0021AB6D /* Category */,
+				FAAFB91A16A6E6EA0021AB6D /* RHTTPRequest */,
+			);
+			name = RFoundation;
+			sourceTree = "<group>";
+		};
+		FAAFB91316A6E6DD0021AB6D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				FAAFB91416A6E6E60021AB6D /* NSNumber+URLCoding.h */,
+				FAAFB91516A6E6E60021AB6D /* NSNumber+URLCoding.m */,
+				FAAFB91616A6E6E60021AB6D /* NSString+URLCoding.h */,
+				FAAFB91716A6E6E60021AB6D /* NSString+URLCoding.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		FAAFB91A16A6E6EA0021AB6D /* RHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FAAFB91B16A6E6F60021AB6D /* RHTTPRequest.h */,
+				FAAFB91C16A6E6F60021AB6D /* RHTTPRequest.m */,
+			);
+			name = RHTTPRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +227,9 @@
 				FAAFB8F816A6E6440021AB6D /* main.m in Sources */,
 				FAAFB8FC16A6E6440021AB6D /* AppDelegate.m in Sources */,
 				FAAFB90516A6E6440021AB6D /* ViewController.m in Sources */,
+				FAAFB91816A6E6E60021AB6D /* NSNumber+URLCoding.m in Sources */,
+				FAAFB91916A6E6E60021AB6D /* NSString+URLCoding.m in Sources */,
+				FAAFB91D16A6E6F60021AB6D /* RHTTPRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
