@@ -8,10 +8,10 @@
 
 #import "RDoubanAuth.h"
 
-#define kRDoubanAuthKeyAccessToken @"AccessToken"
-#define kRDoubanAuthKeyRefreshToken @"RefreshToken"
-#define kRDoubanAuthKeyAccessTokenTimeout @"AccessTokenTimeout"
-#define kRDoubanAuthKeyRefreshTokenTimeout @"RefreshTokenTimeout"
+#define kRDoubanAuthKeyAccessToken @"DoubanAccessToken"
+#define kRDoubanAuthKeyRefreshToken @"DoubanRefreshToken"
+#define kRDoubanAuthKeyAccessTokenTimeout @"DoubanAccessTokenTimeout"
+#define kRDoubanAuthKeyRefreshTokenTimeout @"DoubanRefreshTokenTimeout"
 
 NSString * const kRDoubanAuthPromptLink = @"https://www.douban.com/service/auth2/auth";
 NSString * const kRDoubanAuthAccessTokenLink = @"https://www.douban.com/service/auth2/token";
