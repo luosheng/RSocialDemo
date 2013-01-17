@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FA2E5EC616A7F519000D59D8 /* RSocialSinaWeiboAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E5EC516A7F519000D59D8 /* RSocialSinaWeiboAuth.m */; };
 		FA2E5ECD16A80590000D59D8 /* RSocialRenrenAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E5ECC16A80590000D59D8 /* RSocialRenrenAuth.m */; };
+		FA64523916A84030005A4B39 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64523816A84030005A4B39 /* MBProgressHUD.m */; };
+		FA64523E16A84040005A4B39 /* NSNumber+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64523B16A84040005A4B39 /* NSNumber+URLCoding.m */; };
+		FA64523F16A84040005A4B39 /* NSString+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64523D16A84040005A4B39 /* NSString+URLCoding.m */; };
+		FA64524216A8404C005A4B39 /* RHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64524116A8404C005A4B39 /* RHTTPRequest.m */; };
 		FAAFB8EC16A6E6440021AB6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8EB16A6E6440021AB6D /* UIKit.framework */; };
 		FAAFB8EE16A6E6440021AB6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8ED16A6E6440021AB6D /* Foundation.framework */; };
 		FAAFB8F016A6E6440021AB6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8EF16A6E6440021AB6D /* CoreGraphics.framework */; };
@@ -21,10 +25,6 @@
 		FAAFB90516A6E6440021AB6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB90416A6E6440021AB6D /* ViewController.m */; };
 		FAAFB90816A6E6440021AB6D /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAFB90616A6E6440021AB6D /* ViewController_iPhone.xib */; };
 		FAAFB90B16A6E6440021AB6D /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAFB90916A6E6440021AB6D /* ViewController_iPad.xib */; };
-		FAAFB91816A6E6E60021AB6D /* NSNumber+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB91516A6E6E60021AB6D /* NSNumber+URLCoding.m */; };
-		FAAFB91916A6E6E60021AB6D /* NSString+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB91716A6E6E60021AB6D /* NSString+URLCoding.m */; };
-		FAAFB91D16A6E6F60021AB6D /* RHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB91C16A6E6F60021AB6D /* RHTTPRequest.m */; };
-		FAAFB92116A6E7370021AB6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB92016A6E7370021AB6D /* MBProgressHUD.m */; };
 		FAAFB92416A6E7AD0021AB6D /* RSocialDoubanAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB92316A6E7AD0021AB6D /* RSocialDoubanAuth.m */; };
 		FAAFB92716A6F28E0021AB6D /* RSocialAuthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB92616A6F28E0021AB6D /* RSocialAuthWebViewController.m */; };
 		FAAFBA1A16A7E2390021AB6D /* RSocialOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFBA1916A7E2390021AB6D /* RSocialOAuth.m */; };
@@ -35,6 +35,14 @@
 		FA2E5EC516A7F519000D59D8 /* RSocialSinaWeiboAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialSinaWeiboAuth.m; sourceTree = "<group>"; };
 		FA2E5ECB16A80590000D59D8 /* RSocialRenrenAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialRenrenAuth.h; sourceTree = "<group>"; };
 		FA2E5ECC16A80590000D59D8 /* RSocialRenrenAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialRenrenAuth.m; sourceTree = "<group>"; };
+		FA64523716A84030005A4B39 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Frameworks/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		FA64523816A84030005A4B39 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Frameworks/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		FA64523A16A84040005A4B39 /* NSNumber+URLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+URLCoding.h"; path = "Frameworks/RFoundation/Category/NSNumber+URLCoding.h"; sourceTree = "<group>"; };
+		FA64523B16A84040005A4B39 /* NSNumber+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+URLCoding.m"; path = "Frameworks/RFoundation/Category/NSNumber+URLCoding.m"; sourceTree = "<group>"; };
+		FA64523C16A84040005A4B39 /* NSString+URLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLCoding.h"; path = "Frameworks/RFoundation/Category/NSString+URLCoding.h"; sourceTree = "<group>"; };
+		FA64523D16A84040005A4B39 /* NSString+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLCoding.m"; path = "Frameworks/RFoundation/Category/NSString+URLCoding.m"; sourceTree = "<group>"; };
+		FA64524016A8404C005A4B39 /* RHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHTTPRequest.h; path = Frameworks/RFoundation/RHTTPRequest/RHTTPRequest.h; sourceTree = "<group>"; };
+		FA64524116A8404C005A4B39 /* RHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHTTPRequest.m; path = Frameworks/RFoundation/RHTTPRequest/RHTTPRequest.m; sourceTree = "<group>"; };
 		FAAFB8E716A6E6440021AB6D /* RSocialDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSocialDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAFB8EB16A6E6440021AB6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAAFB8ED16A6E6440021AB6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,14 +60,6 @@
 		FAAFB90416A6E6440021AB6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAAFB90716A6E6440021AB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		FAAFB90A16A6E6440021AB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
-		FAAFB91416A6E6E60021AB6D /* NSNumber+URLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+URLCoding.h"; sourceTree = "<group>"; };
-		FAAFB91516A6E6E60021AB6D /* NSNumber+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+URLCoding.m"; sourceTree = "<group>"; };
-		FAAFB91616A6E6E60021AB6D /* NSString+URLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCoding.h"; sourceTree = "<group>"; };
-		FAAFB91716A6E6E60021AB6D /* NSString+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCoding.m"; sourceTree = "<group>"; };
-		FAAFB91B16A6E6F60021AB6D /* RHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHTTPRequest.h; sourceTree = "<group>"; };
-		FAAFB91C16A6E6F60021AB6D /* RHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHTTPRequest.m; sourceTree = "<group>"; };
-		FAAFB91F16A6E7370021AB6D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		FAAFB92016A6E7370021AB6D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		FAAFB92216A6E7AD0021AB6D /* RSocialDoubanAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialDoubanAuth.h; sourceTree = "<group>"; };
 		FAAFB92316A6E7AD0021AB6D /* RSocialDoubanAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialDoubanAuth.m; sourceTree = "<group>"; };
 		FAAFB92516A6F28E0021AB6D /* RSocialAuthWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialAuthWebViewController.h; sourceTree = "<group>"; };
@@ -193,10 +193,10 @@
 		FAAFB91316A6E6DD0021AB6D /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB91416A6E6E60021AB6D /* NSNumber+URLCoding.h */,
-				FAAFB91516A6E6E60021AB6D /* NSNumber+URLCoding.m */,
-				FAAFB91616A6E6E60021AB6D /* NSString+URLCoding.h */,
-				FAAFB91716A6E6E60021AB6D /* NSString+URLCoding.m */,
+				FA64523A16A84040005A4B39 /* NSNumber+URLCoding.h */,
+				FA64523B16A84040005A4B39 /* NSNumber+URLCoding.m */,
+				FA64523C16A84040005A4B39 /* NSString+URLCoding.h */,
+				FA64523D16A84040005A4B39 /* NSString+URLCoding.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -204,8 +204,8 @@
 		FAAFB91A16A6E6EA0021AB6D /* RHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB91B16A6E6F60021AB6D /* RHTTPRequest.h */,
-				FAAFB91C16A6E6F60021AB6D /* RHTTPRequest.m */,
+				FA64524016A8404C005A4B39 /* RHTTPRequest.h */,
+				FA64524116A8404C005A4B39 /* RHTTPRequest.m */,
 			);
 			name = RHTTPRequest;
 			sourceTree = "<group>";
@@ -213,8 +213,8 @@
 		FAAFB91E16A6E7290021AB6D /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFB91F16A6E7370021AB6D /* MBProgressHUD.h */,
-				FAAFB92016A6E7370021AB6D /* MBProgressHUD.m */,
+				FA64523716A84030005A4B39 /* MBProgressHUD.h */,
+				FA64523816A84030005A4B39 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
 			sourceTree = "<group>";
@@ -289,15 +289,15 @@
 				FAAFB8F816A6E6440021AB6D /* main.m in Sources */,
 				FAAFB8FC16A6E6440021AB6D /* AppDelegate.m in Sources */,
 				FAAFB90516A6E6440021AB6D /* ViewController.m in Sources */,
-				FAAFB91816A6E6E60021AB6D /* NSNumber+URLCoding.m in Sources */,
-				FAAFB91916A6E6E60021AB6D /* NSString+URLCoding.m in Sources */,
-				FAAFB91D16A6E6F60021AB6D /* RHTTPRequest.m in Sources */,
-				FAAFB92116A6E7370021AB6D /* MBProgressHUD.m in Sources */,
 				FAAFB92416A6E7AD0021AB6D /* RSocialDoubanAuth.m in Sources */,
 				FAAFB92716A6F28E0021AB6D /* RSocialAuthWebViewController.m in Sources */,
 				FAAFBA1A16A7E2390021AB6D /* RSocialOAuth.m in Sources */,
 				FA2E5EC616A7F519000D59D8 /* RSocialSinaWeiboAuth.m in Sources */,
 				FA2E5ECD16A80590000D59D8 /* RSocialRenrenAuth.m in Sources */,
+				FA64523916A84030005A4B39 /* MBProgressHUD.m in Sources */,
+				FA64523E16A84040005A4B39 /* NSNumber+URLCoding.m in Sources */,
+				FA64523F16A84040005A4B39 /* NSString+URLCoding.m in Sources */,
+				FA64524216A8404C005A4B39 /* RHTTPRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
