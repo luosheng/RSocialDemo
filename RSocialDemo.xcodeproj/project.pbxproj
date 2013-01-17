@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA2E5EC616A7F519000D59D8 /* RSocialSinaWeiboAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E5EC516A7F519000D59D8 /* RSocialSinaWeiboAuth.m */; };
+		FA2E5ECD16A80590000D59D8 /* RSocialRenrenAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E5ECC16A80590000D59D8 /* RSocialRenrenAuth.m */; };
 		FAAFB8EC16A6E6440021AB6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8EB16A6E6440021AB6D /* UIKit.framework */; };
 		FAAFB8EE16A6E6440021AB6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8ED16A6E6440021AB6D /* Foundation.framework */; };
 		FAAFB8F016A6E6440021AB6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8EF16A6E6440021AB6D /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		FA2E5EC416A7F519000D59D8 /* RSocialSinaWeiboAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialSinaWeiboAuth.h; sourceTree = "<group>"; };
 		FA2E5EC516A7F519000D59D8 /* RSocialSinaWeiboAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialSinaWeiboAuth.m; sourceTree = "<group>"; };
+		FA2E5ECB16A80590000D59D8 /* RSocialRenrenAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialRenrenAuth.h; sourceTree = "<group>"; };
+		FA2E5ECC16A80590000D59D8 /* RSocialRenrenAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialRenrenAuth.m; sourceTree = "<group>"; };
 		FAAFB8E716A6E6440021AB6D /* RSocialDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSocialDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAFB8EB16A6E6440021AB6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAAFB8ED16A6E6440021AB6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,8 @@
 				FAAFB92316A6E7AD0021AB6D /* RSocialDoubanAuth.m */,
 				FA2E5EC416A7F519000D59D8 /* RSocialSinaWeiboAuth.h */,
 				FA2E5EC516A7F519000D59D8 /* RSocialSinaWeiboAuth.m */,
+				FA2E5ECB16A80590000D59D8 /* RSocialRenrenAuth.h */,
+				FA2E5ECC16A80590000D59D8 /* RSocialRenrenAuth.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				FAAFB92716A6F28E0021AB6D /* RSocialAuthWebViewController.m in Sources */,
 				FAAFBA1A16A7E2390021AB6D /* RSocialOAuth.m in Sources */,
 				FA2E5EC616A7F519000D59D8 /* RSocialSinaWeiboAuth.m in Sources */,
+				FA2E5ECD16A80590000D59D8 /* RSocialRenrenAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

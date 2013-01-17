@@ -9,6 +9,7 @@
 #import "MBProgressHUD.h"
 #import "RSocialDoubanAuth.h"
 #import "RSocialSinaWeiboAuth.h"
+#import "RSocialRenrenAuth.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -22,6 +23,7 @@
 
 @property (nonatomic, strong) RSocialDoubanAuth *doubanAuth;
 @property (nonatomic, strong) RSocialSinaWeiboAuth *sinaWeiboAuth;
+@property (nonatomic, strong) RSocialRenrenAuth *renrenAuth;
 
 - (IBAction)checkButtonPressed:(UIButton *)button;
 - (IBAction)loginButtonPressed:(UIButton *)button;
@@ -40,7 +42,7 @@
     progressHUD.labelText = NSLocalizedString(@"Checking...", nil);
     [progressHUD show:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.sinaWeiboAuth checkAuthorizationUpdate];
+        [self.renrenAuth checkAuthorizationUpdate];
         dispatch_async(dispatch_get_main_queue(), ^{
             [progressHUD hide:YES];
             [self updateStatusLabels];
@@ -53,7 +55,7 @@
     MBProgressHUD *progressHUD = self.progressHUD;
     progressHUD.labelText = NSLocalizedString(@"Logging in...", nil);
     [progressHUD show:YES];
-    [self.sinaWeiboAuth authorizeWithCompletionHandler:^(BOOL success) {
+    [self.renrenAuth authorizeWithCompletionHandler:^(BOOL success) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [progressHUD hide:YES];
             [self updateStatusLabels];
@@ -63,7 +65,7 @@
 
 - (void)logoutButtonPressed:(UIButton *)button
 {
-    [self.sinaWeiboAuth logout];
+    [self.renrenAuth logout];
     [self updateStatusLabels];
 }
 
@@ -72,7 +74,7 @@
 - (void)updateStatusLabels
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        RSocialOAuth *auth = self.sinaWeiboAuth;
+        RSocialOAuth *auth = self.renrenAuth;
         self.statusLabel.text = auth.isAuthorized ? NSLocalizedString(@"Authed", nil) : NSLocalizedString(@"Not Authed", nil);
         self.accessTokenLabel.text = auth.accessToken;
         self.accessTokenTimeoutLabel.text = auth.accessTokenTimeout.description;
@@ -97,6 +99,9 @@
     
     RSocialSinaWeiboAuth *sinaWeiboAuth = [[[RSocialSinaWeiboAuth alloc] init] autorelease];
     self.sinaWeiboAuth = sinaWeiboAuth;
+    
+    RSocialRenrenAuth *renrenAuth = [[[RSocialRenrenAuth alloc] init] autorelease];
+    self.renrenAuth = renrenAuth;
 }
 
 - (void)viewDidAppear:(BOOL)animated
