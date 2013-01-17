@@ -7,7 +7,7 @@
 //
 
 #import "MBProgressHUD.h"
-#import "RDoubanAuth.h"
+#import "RSocialDoubanAuth.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -15,7 +15,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *statusLabel;
 @property (nonatomic, strong) MBProgressHUD *progressHUD;
 
-@property (nonatomic, strong) RDoubanAuth *doubanAuth;
+@property (nonatomic, strong) RSocialDoubanAuth *doubanAuth;
 
 - (IBAction)checkButtonPressed:(UIButton *)button;
 - (IBAction)loginButtonPressed:(UIButton *)button;
@@ -70,7 +70,7 @@
     self.progressHUD = progressHUD;
     [self.view addSubview:progressHUD];
     
-    RDoubanAuth *doubanAuth = [[[RDoubanAuth alloc] init] autorelease];
+    RSocialDoubanAuth *doubanAuth = [[[RSocialDoubanAuth alloc] init] autorelease];
     self.doubanAuth = doubanAuth;
 }
 

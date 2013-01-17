@@ -1,26 +1,26 @@
 //
-//  RDoubanAuth.m
+//  RSocialDoubanAuth.m
 //  RSocialDemo
 //
 //  Created by Alex Rezit on 16/01/2013.
 //  Copyright (c) 2013 Seymour Dev. All rights reserved.
 //
 
-#import "RDoubanAuth.h"
+#import "RSocialDoubanAuth.h"
 
-#define kRDoubanAuthKeyAccessToken @"DoubanAccessToken"
-#define kRDoubanAuthKeyRefreshToken @"DoubanRefreshToken"
-#define kRDoubanAuthKeyAccessTokenTimeout @"DoubanAccessTokenTimeout"
-#define kRDoubanAuthKeyRefreshTokenTimeout @"DoubanRefreshTokenTimeout"
+#define kRSocialDoubanAuthKeyAccessToken @"DoubanAccessToken"
+#define kRSocialDoubanAuthKeyRefreshToken @"DoubanRefreshToken"
+#define kRSocialDoubanAuthKeyAccessTokenTimeout @"DoubanAccessTokenTimeout"
+#define kRSocialDoubanAuthKeyRefreshTokenTimeout @"DoubanRefreshTokenTimeout"
 
-NSString * const kRDoubanAuthPromptLink = @"https://www.douban.com/service/auth2/auth";
-NSString * const kRDoubanAuthAccessTokenLink = @"https://www.douban.com/service/auth2/token";
+NSString * const kRSocialDoubanAuthPromptLink = @"https://www.douban.com/service/auth2/auth";
+NSString * const kRSocialDoubanAuthAccessTokenLink = @"https://www.douban.com/service/auth2/token";
 
-@interface RDoubanAuth ()
+@interface RSocialDoubanAuth ()
 
 @end
 
-@implementation RDoubanAuth
+@implementation RSocialDoubanAuth
 
 #pragma mark - Auth flow
 
@@ -47,52 +47,52 @@ NSString * const kRDoubanAuthAccessTokenLink = @"https://www.douban.com/service/
 - (NSString *)accessToken
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:kRDoubanAuthKeyAccessToken];
+    return [userDefaults valueForKey:kRSocialDoubanAuthKeyAccessToken];
 }
 
 - (NSString *)refreshToken
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:kRDoubanAuthKeyRefreshToken];
+    return [userDefaults valueForKey:kRSocialDoubanAuthKeyRefreshToken];
 }
 
 - (NSDate *)accessTokenTimeout
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:kRDoubanAuthKeyAccessTokenTimeout];
+    return [userDefaults valueForKey:kRSocialDoubanAuthKeyAccessTokenTimeout];
 }
 
 - (NSDate *)refreshTokenTimeout
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:kRDoubanAuthKeyRefreshTokenTimeout];
+    return [userDefaults valueForKey:kRSocialDoubanAuthKeyRefreshTokenTimeout];
 }
 
 - (void)setAccessToken:(NSString *)accessToken
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:accessToken forKey:kRDoubanAuthKeyAccessToken];
+    [userDefaults setValue:accessToken forKey:kRSocialDoubanAuthKeyAccessToken];
     [userDefaults synchronize];
 }
 
 - (void)setRefreshToken:(NSString *)refreshToken
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:refreshToken forKey:kRDoubanAuthKeyRefreshToken];
+    [userDefaults setValue:refreshToken forKey:kRSocialDoubanAuthKeyRefreshToken];
     [userDefaults synchronize];
 }
 
 - (void)setAccessTokenTimeout:(NSDate *)accessTokenTimeout
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:accessTokenTimeout forKey:kRDoubanAuthKeyAccessTokenTimeout];
+    [userDefaults setValue:accessTokenTimeout forKey:kRSocialDoubanAuthKeyAccessTokenTimeout];
     [userDefaults synchronize];
 }
 
 - (void)setRefreshTokenTimeout:(NSDate *)refreshTokenTimeout
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:refreshTokenTimeout forKey:kRDoubanAuthKeyRefreshTokenTimeout];
+    [userDefaults setValue:refreshTokenTimeout forKey:kRSocialDoubanAuthKeyRefreshTokenTimeout];
     [userDefaults synchronize];
 }
 
@@ -104,8 +104,8 @@ NSString * const kRDoubanAuthAccessTokenLink = @"https://www.douban.com/service/
     self.clientSecret = @"c92655b1f2bea687";
     self.redirectURI = @"http://rsocial.seymourdev.com/";
     
-    self.authorizeLink = kRDoubanAuthPromptLink;
-    self.accessTokenLink = kRDoubanAuthAccessTokenLink;
+    self.authorizeLink = kRSocialDoubanAuthPromptLink;
+    self.accessTokenLink = kRSocialDoubanAuthAccessTokenLink;
 }
 
 @end
