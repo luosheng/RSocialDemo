@@ -74,6 +74,7 @@
 
 - (void)dismiss
 {
+    self.webView.delegate = nil;
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         if ([self.delegate respondsToSelector:@selector(authWebViewControllerDidDismiss:)]) {
             [self.delegate authWebViewControllerDidDismiss:self];
@@ -129,6 +130,12 @@
     progressHUD.minShowTime = 0.3f;
     self.progressHUD = progressHUD;
     [self.view addSubview:progressHUD];
+}
+
+- (void)dealloc
+{
+    self.webView.delegate = nil;
+    [super dealloc];
 }
 
 - (void)viewDidAppear:(BOOL)animated
