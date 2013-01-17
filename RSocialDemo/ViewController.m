@@ -6,12 +6,14 @@
 //  Copyright (c) 2013 Seymour Dev. All rights reserved.
 //
 
+#import "MBProgressHUD.h"
 #import "RDoubanAuth.h"
 #import "ViewController.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) IBOutlet UILabel *statusLabel;
+@property (nonatomic, strong) MBProgressHUD *progressHUD;
 
 @property (nonatomic, strong) RDoubanAuth *doubanAuth;
 
@@ -26,9 +28,13 @@
 - (void)checkButtonPressed:(UIButton *)button
 {
     self.statusLabel.text = NSLocalizedString(@"Checking", nil);
+    MBProgressHUD *progressHUD = self.progressHUD;
+    progressHUD.labelText = NSLocalizedString(@"Checking...", nil);
+    [progressHUD show:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isAuthed = [self.doubanAuth checkAuthorizationUpdate];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [progressHUD hide:YES];
             self.statusLabel.text = isAuthed ? NSLocalizedString(@"Authed", nil) : NSLocalizedString(@"Not Authed", nil);
         });
     });
@@ -36,8 +42,12 @@
 
 - (void)loginButtonPressed:(UIButton *)button
 {
+    MBProgressHUD *progressHUD = self.progressHUD;
+    progressHUD.labelText = NSLocalizedString(@"Logging in...", nil);
+    [progressHUD show:YES];
     [self.doubanAuth authorizeWithCompletionHandler:^(BOOL success) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [progressHUD hide:YES];
             self.statusLabel.text = success ? NSLocalizedString(@"Authed", nil) : NSLocalizedString(@"Not Authed", nil);
         });
     }];
@@ -55,10 +65,12 @@
 {
     [super viewDidLoad];
     
+    MBProgressHUD *progressHUD = [[[MBProgressHUD alloc] initWithView:self.view] autorelease];
+    progressHUD.minShowTime = 0.3f;
+    self.progressHUD = progressHUD;
+    [self.view addSubview:progressHUD];
+    
     RDoubanAuth *doubanAuth = [[[RDoubanAuth alloc] init] autorelease];
-    doubanAuth.clientID = @"0bdb1a1a76c3e40b23914e4f644bac21";
-    doubanAuth.clientSecret = @"c92655b1f2bea687";
-    doubanAuth.redirectURI = @"rsocial://";
     self.doubanAuth = doubanAuth;
 }
 

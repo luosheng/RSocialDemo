@@ -25,6 +25,7 @@
 		FAAFB92116A6E7370021AB6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB92016A6E7370021AB6D /* MBProgressHUD.m */; };
 		FAAFB92416A6E7AD0021AB6D /* RDoubanAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB92316A6E7AD0021AB6D /* RDoubanAuth.m */; };
 		FAAFB92716A6F28E0021AB6D /* RSocialAuthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB92616A6F28E0021AB6D /* RSocialAuthWebViewController.m */; };
+		FAAFBA1A16A7E2390021AB6D /* RSocialOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAFBA1916A7E2390021AB6D /* RSocialOAuth.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		FAAFB92316A6E7AD0021AB6D /* RDoubanAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDoubanAuth.m; sourceTree = "<group>"; };
 		FAAFB92516A6F28E0021AB6D /* RSocialAuthWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialAuthWebViewController.h; sourceTree = "<group>"; };
 		FAAFB92616A6F28E0021AB6D /* RSocialAuthWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialAuthWebViewController.m; sourceTree = "<group>"; };
+		FAAFBA1816A7E2380021AB6D /* RSocialOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialOAuth.h; sourceTree = "<group>"; };
+		FAAFBA1916A7E2390021AB6D /* RSocialOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialOAuth.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				FAAFB92616A6F28E0021AB6D /* RSocialAuthWebViewController.m */,
 				FAAFB92216A6E7AD0021AB6D /* RDoubanAuth.h */,
 				FAAFB92316A6E7AD0021AB6D /* RDoubanAuth.m */,
+				FAAFBA1816A7E2380021AB6D /* RSocialOAuth.h */,
+				FAAFBA1916A7E2390021AB6D /* RSocialOAuth.m */,
 			);
 			name = RSocial;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				FAAFB92116A6E7370021AB6D /* MBProgressHUD.m in Sources */,
 				FAAFB92416A6E7AD0021AB6D /* RDoubanAuth.m in Sources */,
 				FAAFB92716A6F28E0021AB6D /* RSocialAuthWebViewController.m in Sources */,
+				FAAFBA1A16A7E2390021AB6D /* RSocialOAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +386,7 @@
 				FAAFB91016A6E6440021AB6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
