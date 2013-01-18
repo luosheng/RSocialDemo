@@ -143,6 +143,8 @@
     self.navigationItem.rightBarButtonItem = self.refreshBarButton;
     
     UIWebView *webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
+    webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
+                                UIViewAutoresizingFlexibleHeight);
     webView.delegate = self;
     self.webView = webView;
     [self.view addSubview:webView];
