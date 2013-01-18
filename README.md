@@ -13,7 +13,7 @@ Demo project of RSocial.
 | Douban         |   ✔   |       |
 | Sina Weibo     |   ✔   |       |
 | Renren         |   ✔   |       |
-| Tencent Weibo  |       |       |
+| Tencent Weibo  |   ✔   |       |
 | Tencent Weixin |       |       |
 | Qzone          |       |       |
 
