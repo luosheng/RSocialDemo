@@ -22,22 +22,6 @@ NSString * const kRSocialSinaWeiboAuthAccessTokenLink = @"https://api.weibo.com/
 
 @implementation RSocialSinaWeiboAuth
 
-#pragma mark - Auth flow
-
-- (void)handleCodeAuthResponse:(NSDictionary *)responseDictionary
-{
-    [super handleCodeAuthResponse:responseDictionary];
-    NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
-    self.refreshTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn * 2];
-}
-
-- (void)handleRefreshTokenAuthResponse:(NSDictionary *)responseDictionary
-{
-    [super handleRefreshTokenAuthResponse:responseDictionary];
-    NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
-    self.refreshTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn * 2];
-}
-
 #pragma mark - Getters and setters
 
 #warning ATTENTION!!!
