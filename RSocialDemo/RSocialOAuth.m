@@ -130,27 +130,12 @@ NSTimeInterval const kRSocialOAuthTimeoutOffset = 300; // 5 min
 
 - (void)promptWithWebView
 {
-    // Find the window on the top.
-    UIApplication *application = [UIApplication sharedApplication];
-    UIWindow *topWindow = application.keyWindow;
-    if (topWindow.windowLevel != UIWindowLevelNormal) {
-        for (UIWindow *window in application.windows) {
-            if (window.windowLevel == UIWindowLevelNormal) {
-                topWindow = window;
-                break;
-            }
-        }
-    }
-    
     if (!self.scope) {
         self.scope = @"";
     }
     NSDictionary *authRequestDictionary = self.webViewAuthRequestDictionary;
     NSURL *urlWithData = [NSURL URLWithString:[self.authorizeLink stringByAppendingFormat:@"?%@", [NSString stringWithURLEncodedDictionary:authRequestDictionary]]];
-    UINavigationController *navigationController = [RSocialAuthWebViewController navigationControllerWithAuthURL:urlWithData callbackURL:[NSURL URLWithString:self.redirectURI] delegate:self];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [topWindow.rootViewController presentViewController:navigationController animated:YES completion:nil];
-    });
+    [RSocialAuthWebViewController promptWithAuthURL:urlWithData callbackURL:[NSURL URLWithString:self.redirectURI] delegate:self];
 }
 
 - (void)getAccessTokenWithAuthCode

@@ -26,6 +26,9 @@
 
 @property (nonatomic, assign) id<RSocialAuthWebViewControllerDelegate> delegate;
 
++ (void)promptWithAuthURL:(NSURL *)authURL
+              callbackURL:(NSURL *)callbackURL
+                 delegate:(id<RSocialAuthWebViewControllerDelegate>)delegate;
 + (UINavigationController *)navigationControllerWithAuthURL:(NSURL *)authURL
                                                 callbackURL:(NSURL *)callbackURL
                                                    delegate:(id<RSocialAuthWebViewControllerDelegate>)delegate;
