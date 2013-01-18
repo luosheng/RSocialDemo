@@ -10,6 +10,7 @@
 #import "RSocialDoubanAuth.h"
 #import "RSocialSinaWeiboAuth.h"
 #import "RSocialRenrenAuth.h"
+#import "RSocialTencentWeiboAuth.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) RSocialDoubanAuth *doubanAuth;
 @property (nonatomic, strong) RSocialSinaWeiboAuth *sinaWeiboAuth;
 @property (nonatomic, strong) RSocialRenrenAuth *renrenAuth;
+@property (nonatomic, strong) RSocialTencentWeiboAuth *tencentWeiboAuth;
 
 - (IBAction)checkButtonPressed:(UIButton *)button;
 - (IBAction)loginButtonPressed:(UIButton *)button;
@@ -42,7 +44,7 @@
     progressHUD.labelText = NSLocalizedString(@"Checking...", nil);
     [progressHUD show:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.renrenAuth checkAuthorizationUpdate];
+        [self.tencentWeiboAuth checkAuthorizationUpdate];
         dispatch_async(dispatch_get_main_queue(), ^{
             [progressHUD hide:YES];
             [self updateStatusLabels];
@@ -55,7 +57,7 @@
     MBProgressHUD *progressHUD = self.progressHUD;
     progressHUD.labelText = NSLocalizedString(@"Logging in...", nil);
     [progressHUD show:YES];
-    [self.renrenAuth authorizeWithCompletionHandler:^(BOOL success) {
+    [self.tencentWeiboAuth authorizeWithCompletionHandler:^(BOOL success) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [progressHUD hide:YES];
             [self updateStatusLabels];
@@ -65,7 +67,7 @@
 
 - (void)logoutButtonPressed:(UIButton *)button
 {
-    [self.renrenAuth logout];
+    [self.tencentWeiboAuth logout];
     [self updateStatusLabels];
 }
 
@@ -74,7 +76,7 @@
 - (void)updateStatusLabels
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        RSocialOAuth *auth = self.renrenAuth;
+        RSocialOAuth *auth = self.tencentWeiboAuth;
         self.statusLabel.text = auth.isAuthorized ? NSLocalizedString(@"Authed", nil) : NSLocalizedString(@"Not Authed", nil);
         self.accessTokenLabel.text = auth.accessToken;
         self.accessTokenTimeoutLabel.text = auth.accessTokenTimeout.description;
@@ -102,6 +104,9 @@
     
     RSocialRenrenAuth *renrenAuth = [[[RSocialRenrenAuth alloc] init] autorelease];
     self.renrenAuth = renrenAuth;
+    
+    RSocialTencentWeiboAuth *tencentWeiboAuth = [[[RSocialTencentWeiboAuth alloc] init] autorelease];
+    self.tencentWeiboAuth = tencentWeiboAuth;
 }
 
 - (void)viewDidAppear:(BOOL)animated

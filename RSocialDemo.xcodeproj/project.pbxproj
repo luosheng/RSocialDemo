@@ -13,6 +13,7 @@
 		FA64523E16A84040005A4B39 /* NSNumber+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64523B16A84040005A4B39 /* NSNumber+URLCoding.m */; };
 		FA64523F16A84040005A4B39 /* NSString+URLCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64523D16A84040005A4B39 /* NSString+URLCoding.m */; };
 		FA64524216A8404C005A4B39 /* RHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64524116A8404C005A4B39 /* RHTTPRequest.m */; };
+		FA64524916A91D48005A4B39 /* RSocialTencentWeiboAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64524816A91D48005A4B39 /* RSocialTencentWeiboAuth.m */; };
 		FAAFB8EC16A6E6440021AB6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8EB16A6E6440021AB6D /* UIKit.framework */; };
 		FAAFB8EE16A6E6440021AB6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8ED16A6E6440021AB6D /* Foundation.framework */; };
 		FAAFB8F016A6E6440021AB6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFB8EF16A6E6440021AB6D /* CoreGraphics.framework */; };
@@ -43,6 +44,8 @@
 		FA64523D16A84040005A4B39 /* NSString+URLCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLCoding.m"; path = "Frameworks/RFoundation/Category/NSString+URLCoding.m"; sourceTree = "<group>"; };
 		FA64524016A8404C005A4B39 /* RHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHTTPRequest.h; path = Frameworks/RFoundation/RHTTPRequest/RHTTPRequest.h; sourceTree = "<group>"; };
 		FA64524116A8404C005A4B39 /* RHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHTTPRequest.m; path = Frameworks/RFoundation/RHTTPRequest/RHTTPRequest.m; sourceTree = "<group>"; };
+		FA64524716A91D48005A4B39 /* RSocialTencentWeiboAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSocialTencentWeiboAuth.h; sourceTree = "<group>"; };
+		FA64524816A91D48005A4B39 /* RSocialTencentWeiboAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSocialTencentWeiboAuth.m; sourceTree = "<group>"; };
 		FAAFB8E716A6E6440021AB6D /* RSocialDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSocialDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAFB8EB16A6E6440021AB6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAAFB8ED16A6E6440021AB6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,8 @@
 				FA2E5EC516A7F519000D59D8 /* RSocialSinaWeiboAuth.m */,
 				FA2E5ECB16A80590000D59D8 /* RSocialRenrenAuth.h */,
 				FA2E5ECC16A80590000D59D8 /* RSocialRenrenAuth.m */,
+				FA64524716A91D48005A4B39 /* RSocialTencentWeiboAuth.h */,
+				FA64524816A91D48005A4B39 /* RSocialTencentWeiboAuth.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				FA64523E16A84040005A4B39 /* NSNumber+URLCoding.m in Sources */,
 				FA64523F16A84040005A4B39 /* NSString+URLCoding.m in Sources */,
 				FA64524216A8404C005A4B39 /* RHTTPRequest.m in Sources */,
+				FA64524916A91D48005A4B39 /* RSocialTencentWeiboAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
