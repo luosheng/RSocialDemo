@@ -158,6 +158,16 @@
 - (void)dealloc
 {
     self.webView.delegate = nil;
+    
+    self.authURL = nil;
+    self.callbackURL = nil;
+    
+    self.cancelBarButton = nil;
+    self.refreshBarButton = nil;
+    self.stopBarButton = nil;
+    self.webView = nil;
+    self.progressHUD = nil;
+    
     [super dealloc];
 }
 
