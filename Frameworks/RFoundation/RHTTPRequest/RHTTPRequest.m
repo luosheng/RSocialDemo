@@ -30,13 +30,24 @@ NSString * const HTTPMethodDELETE = @"DELETE";
     NSHTTPURLResponse *response = nil;
     NSError *error = nil;
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (error) {
+        NSLog(@"RHTTPRequest: URL connection error \n%@", error.description);
+    }
     [request release];
     if (responseHeaders) {
         *responseHeaders = response.allHeaderFields;
     }
     NSDictionary *responseDictionary = nil;
     if (responseData) {
-        responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:NULL];
+        NSError *error = nil;
+        responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&error];
+        if (error) {
+            NSLog(@"RHTTPRequest: JSON parsing error \n%@", error.description);
+        }
+        if (!responseDictionary) {
+            NSString *responseString = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease];
+            responseDictionary = responseString.URLDecodedDictionary;
+        }
     }
     return responseDictionary;
 }
