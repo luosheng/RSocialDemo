@@ -219,6 +219,13 @@ NSTimeInterval const kRSocialOAuthTimeoutOffset = 300; // 5 min
     return requestDictionary;
 }
 
+- (void)handleWebViewAuthResponse:(NSDictionary *)responseDictionary
+{
+    if ([responseDictionary isKindOfClass:[NSDictionary class]]) {
+        self.code = responseDictionary[@"code"];
+    }
+}
+
 - (void)handleCodeAuthResponse:(NSDictionary *)responseDictionary
 {
     if ([responseDictionary isKindOfClass:[NSDictionary class]]) {
@@ -266,9 +273,7 @@ NSTimeInterval const kRSocialOAuthTimeoutOffset = 300; // 5 min
 
 - (void)authWebViewController:(RSocialAuthWebViewController *)viewController didSuccessWithResponseDictionary:(NSDictionary *)responseDictionary
 {
-    if ([responseDictionary isKindOfClass:[NSDictionary class]]) {
-        self.code = responseDictionary[@"code"];
-    }
+    [self handleWebViewAuthResponse:responseDictionary];
 }
 
 @end

@@ -63,6 +63,7 @@
 - (NSDictionary *)webViewAuthRequestDictionary;
 - (NSDictionary *)codeAuthRequestDictionary;
 - (NSDictionary *)refreshTokenAuthRequestDictionary;
+- (void)handleWebViewAuthResponse:(NSDictionary *)responseDictionary;
 - (void)handleCodeAuthResponse:(NSDictionary *)responseDictionary;
 - (void)handleRefreshTokenAuthResponse:(NSDictionary *)responseDictionary;
 
