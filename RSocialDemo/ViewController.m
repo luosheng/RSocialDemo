@@ -121,4 +121,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Interface orientation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ? YES : toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+
 @end
