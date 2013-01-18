@@ -27,15 +27,19 @@ NSString * const kRSocialDoubanAuthAccessTokenLink = @"https://www.douban.com/se
 - (void)handleCodeAuthResponse:(NSDictionary *)responseDictionary
 {
     [super handleCodeAuthResponse:responseDictionary];
-    NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
-    self.refreshTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn * 2];
+    if ([responseDictionary isKindOfClass:[NSDictionary class]]) {
+        NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
+        self.refreshTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn * 2];
+    }
 }
 
 - (void)handleRefreshTokenAuthResponse:(NSDictionary *)responseDictionary
 {
     [super handleRefreshTokenAuthResponse:responseDictionary];
-    NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
-    self.refreshTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn * 2];
+    if ([responseDictionary isKindOfClass:[NSDictionary class]]) {
+        NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
+        self.refreshTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn * 2];
+    }
 }
 
 #pragma mark - Getters and setters
