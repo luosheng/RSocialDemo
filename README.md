@@ -15,7 +15,7 @@ Demo project of RSocial.
 | Renren         |   ✔   |       |
 | Tencent Weibo  |   ✔   |       |
 | Tencent Weixin |       |       |
-| Qzone          |       |       |
+| Qzone          |   ✔   |       |
 
 ## License | 许可
 
