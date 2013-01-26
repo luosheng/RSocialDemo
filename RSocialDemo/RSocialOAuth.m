@@ -218,7 +218,9 @@ NSTimeInterval const kRSocialOAuthTimeoutOffset = 300; // 5 min
         self.refreshToken = responseDictionary[@"refresh_token"];
         NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
         self.accessTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn];
-        self.refreshTokenTimeout = [NSDate distantFuture];
+        if (self.refreshToken) {
+            self.refreshTokenTimeout = [NSDate distantFuture];
+        }
     }
 }
 
@@ -229,7 +231,9 @@ NSTimeInterval const kRSocialOAuthTimeoutOffset = 300; // 5 min
         self.refreshToken = responseDictionary[@"refresh_token"];
         NSInteger expiresIn = [responseDictionary[@"expires_in"] integerValue];
         self.accessTokenTimeout = [NSDate dateWithTimeIntervalSinceNow:expiresIn];
-        self.refreshTokenTimeout = [NSDate distantFuture];
+        if (self.refreshToken) {
+            self.refreshTokenTimeout = [NSDate distantFuture];
+        }
     }
 }
 
