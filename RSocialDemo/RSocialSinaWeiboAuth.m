@@ -80,6 +80,13 @@ NSString * const kRSocialSinaWeiboAuthAccessTokenLink = @"https://api.weibo.com/
     [userDefaults synchronize];
 }
 
+- (NSDictionary *)webViewAuthRequestDictionary
+{
+    NSMutableDictionary *dict = [[super webViewAuthRequestDictionary] mutableCopy];
+    dict[@"display"] = @"mobile";
+    return [dict copy];
+}
+
 #pragma mark - Life cycle
 
 - (void)configure
